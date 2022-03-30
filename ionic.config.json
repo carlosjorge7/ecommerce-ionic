@@ -1,0 +1,7 @@
+{
+  "name": "ferintegra",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

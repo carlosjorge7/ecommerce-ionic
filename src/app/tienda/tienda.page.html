@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tienda
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar animated placeholder="Buscar" (ionChange)="buscarProducto($event)"></ion-searchbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <!-- Skeleton -->
+        <ion-list *ngIf="productos.length === 0">
+          <ion-item *ngFor="let producto of productos">
+            <ion-label>
+              <ion-skeleton-text width="40%"></ion-skeleton-text>
+              <ion-skeleton-text width="80%"></ion-skeleton-text>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-list *ngFor="let producto of productos ">
+          <!-- <ion-item-sliding *ngFor="let producto of productos | filtroProductos: textoBuscar "> -->
+            <ion-item (click)="view(producto)">
+              <ion-avatar slot="start">
+                <img [src]="'http://localhost:7777/' + producto.imagen" width="10%" height="10%">
+              </ion-avatar>
+              <ion-label>
+                <h3 class="title">{{producto.nombre}}</h3>
+                <p class="subtext">{{ 'Des: ' + producto.descripcion + ' Precio: ' + producto.precio}}</p>
+              </ion-label>
+            </ion-item>
+            <ion-item-options slot="end">
+              <!-- <ion-item-option color="danger" (click)="de(coche.idCoche)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-item-option> -->
+              <ion-item-option color="success" (click)="view(producto)">
+                <ion-icon name="pencil"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

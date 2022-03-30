@@ -23,13 +23,13 @@
         <ion-list *ngFor="let producto of productos ">
           <!-- <ion-item-sliding *ngFor="let producto of productos | filtroProductos: textoBuscar "> -->
             <ion-item (click)="view(producto)">
-              <ion-avatar slot="start">
-                <img [src]="'http://localhost:7777/' + producto.imagen" width="10%" height="10%">
-              </ion-avatar>
+              <img [src]="'http://localhost:7777/' + producto.imagen" width="100px" height="100px">
               <ion-label>
-                <h3 class="title">{{producto.nombre}}</h3>
-                <p class="subtext">{{ 'Des: ' + producto.descripcion + ' Precio: ' + producto.precio}}</p>
+                <h1 class="title">{{producto.nombre}}</h1>
+                <p class="subtext">{{ producto.descripcion }}</p>
+                <h3 class="subtext">{{ producto.precio }} $ </h3>
               </ion-label>
+              <ion-button>dd</ion-button>
             </ion-item>
             <ion-item-options slot="end">
               <!-- <ion-item-option color="danger" (click)="de(coche.idCoche)">

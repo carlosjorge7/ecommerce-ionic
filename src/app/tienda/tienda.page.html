@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
       Tienda
     </ion-title>
@@ -20,7 +20,7 @@
             </ion-label>
           </ion-item>
         </ion-list>
-        <ion-list *ngFor="let producto of productos ">
+        <ion-list *ngFor="let producto of productos "  [routerLink]="['/detalle/' + producto.idProducto]">
           <!-- <ion-item-sliding *ngFor="let producto of productos | filtroProductos: textoBuscar "> -->
             <ion-item (click)="view(producto)">
               <img [src]="'http://localhost:7777/' + producto.imagen" width="100px" height="100px">

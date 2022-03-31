@@ -15,4 +15,10 @@ export class ProductosService {
   getProductos(): Observable<Producto[]>{
     return this.http.get<Producto[]>(`${this.API}/productos`);
   }
+
+  getProducto(idProducto: string | number): Observable<Producto>{
+    return this.http.get<Producto>(`${this.API}/productos/${idProducto}`);
+  }
+
+
 }

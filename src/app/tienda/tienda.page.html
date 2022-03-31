@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="dark">
     <ion-title>
-      Tienda
+      
+      <ion-searchbar animated placeholder="Buscar" (ionChange)="buscarProducto($event)"></ion-searchbar>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar animated placeholder="Buscar" (ionChange)="buscarProducto($event)"></ion-searchbar>
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -20,25 +20,15 @@
             </ion-label>
           </ion-item>
         </ion-list>
-        <ion-list *ngFor="let producto of productos "  [routerLink]="['/detalle/' + producto.idProducto]">
-          <!-- <ion-item-sliding *ngFor="let producto of productos | filtroProductos: textoBuscar "> -->
-            <ion-item (click)="view(producto)">
-              <img [src]="'http://localhost:7777/' + producto.imagen" width="100px" height="100px">
-              <ion-label>
-                <h1 class="title">{{producto.nombre}}</h1>
+        <ion-list *ngFor="let producto of productos | filtroProductos: textoBuscar">
+            <ion-item  [routerLink]="['/detalle/' + producto.idProducto]">
+              <img [src]="'http://localhost:7777/' + producto.imagen" width="100px" height="100px" style="margin-bottom: 10px;">
+              <ion-label style="margin-left: 10px;">
+                <h2 class="title"><strong>{{producto.nombre}}</strong></h2>
+                <h1 class="subtext">{{ producto.precio }} € </h1>
                 <p class="subtext">{{ producto.descripcion }}</p>
-                <h3 class="subtext">{{ producto.precio }} $ </h3>
               </ion-label>
-              <ion-button>dd</ion-button>
             </ion-item>
-            <ion-item-options slot="end">
-              <!-- <ion-item-option color="danger" (click)="de(coche.idCoche)">
-                <ion-icon name="trash"></ion-icon>
-              </ion-item-option> -->
-              <ion-item-option color="success" (click)="view(producto)">
-                <ion-icon name="pencil"></ion-icon>
-              </ion-item-option>
-            </ion-item-options>
         </ion-list>
       </ion-col>
     </ion-row>

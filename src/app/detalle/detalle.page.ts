@@ -34,10 +34,10 @@ export class DetallePage implements OnInit {
     this.detalleProducto(this.idProducto);
   }
 
-  private detalleProducto(idProducto: number){
-    this.productosService.getProducto(idProducto).subscribe(res => {
+  public detalleProducto(idProducto: number){
+     this.productosService.getProducto(idProducto).subscribe(res => {
       this.producto = res;
-      console.log(this.producto)
+      // console.log(this.producto)
     });
   }
 

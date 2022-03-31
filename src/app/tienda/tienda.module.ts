@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TiendaPage } from './tienda.page';
-//import { PipesModule } from '../pipes/pipes.module';
+import { PipesModule } from '../pipes/pipes.module';
 import { TiendaPageRoutingModule } from './tienda-routing.module';
 
 @NgModule({
@@ -12,7 +12,7 @@ import { TiendaPageRoutingModule } from './tienda-routing.module';
     CommonModule,
     FormsModule,
     TiendaPageRoutingModule,
-    //PipesModule
+    PipesModule
   ],
   declarations: [TiendaPage]
 })

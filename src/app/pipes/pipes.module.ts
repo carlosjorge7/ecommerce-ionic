@@ -1,8 +1,8 @@
-// import { NgModule } from '@angular/core';
-// import { FiltroProductosPipe } from './filtro-productos.pipe';
+import { NgModule } from '@angular/core';
+import { FiltroProductosPipe } from './filtro-productos.pipe';
 
-// @NgModule({
-//   declarations: [FiltroProductosPipe],
-//   exports: [FiltroProductosPipe]
-// })
-// export class PipesModule { }
+@NgModule({
+  declarations: [FiltroProductosPipe],
+  exports: [FiltroProductosPipe]
+})
+export class PipesModule { }

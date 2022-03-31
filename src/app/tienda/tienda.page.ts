@@ -30,8 +30,4 @@ export class TiendaPage implements OnInit {
     })
   }
 
-  public view(producto: Producto) {
-
-  }
-
 }

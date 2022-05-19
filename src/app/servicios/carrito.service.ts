@@ -6,10 +6,9 @@ import { Producto } from '../modelos/Producto';
 })
 export class CarritoService {
 
-  public carrito: Producto[];
+  public carrito: Producto[] = [];
 
   constructor() { 
-    this.carrito = [];
   }
 
   public añadirProductoAlCarrito(producto: Producto): void {

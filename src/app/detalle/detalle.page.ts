@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Producto } from '../modelos/Producto';
+import { CarritoService } from '../servicios/carrito.service';
 import { ProductosService } from '../servicios/productos.service';
 
 @Component({
@@ -25,7 +26,8 @@ export class DetallePage implements OnInit {
   }
 
   constructor(private activatedRoute: ActivatedRoute, 
-              private productosService: ProductosService) { }
+              private productosService: ProductosService,
+              private carritoService: CarritoService) { }
 
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
@@ -39,6 +41,11 @@ export class DetallePage implements OnInit {
      this.productosService.getProducto(idProducto).subscribe((res: Producto) => {
       this.producto = res;
     });
+  }
+
+  public anadirProducto(producto: Producto) {
+    this.carritoService.añadirProductoAlCarrito(producto);
+    console.log(this.carritoService.estadoDelCarrito());
   }
 
 }

@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar color="light">
-    <ion-title>{{producto.nombre}}</ion-title>
+  <ion-toolbar color="dark">
     <ion-button slot="start">
-      <ion-back-button  defaultHref="/tabs/tienda"></ion-back-button>
+      <ion-back-button color="light" defaultHref="/tabs/tienda"></ion-back-button>
     </ion-button>
+    Detalle del producto
   </ion-toolbar>
 </ion-header>
 
@@ -14,6 +14,7 @@
        <div *ngIf="producto">
          <ion-card>
            <ion-card-content>
+            <ion-title>{{producto.nombre}}</ion-title>
              <img [src]="'http://localhost:7777/' + producto.imagen" alt="">
              <ion-card-title class="ion-text-center">
                Características

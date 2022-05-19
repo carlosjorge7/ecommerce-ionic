@@ -29,15 +29,15 @@ export class DetallePage implements OnInit {
 
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
-    this.idProducto = params['idProducto'];
+    this.idProducto = Number(params.idProducto);
+    
     console.log(this.idProducto);
     this.detalleProducto(this.idProducto);
   }
 
   public detalleProducto(idProducto: number){
-     this.productosService.getProducto(idProducto).subscribe(res => {
+     this.productosService.getProducto(idProducto).subscribe((res: Producto) => {
       this.producto = res;
-      // console.log(this.producto)
     });
   }
 

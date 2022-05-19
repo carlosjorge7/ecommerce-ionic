@@ -12,11 +12,11 @@ export class ProductosService {
 
   constructor(private http: HttpClient) { }
 
-  getProductos(): Observable<Producto[]>{
+  public getProductos(): Observable<Producto[]>{
     return this.http.get<Producto[]>(`${this.API}/productos`);
   }
 
-  getProducto(idProducto: string | number): Observable<Producto>{
+  public getProducto(idProducto: number): Observable<Producto>{
     return this.http.get<Producto>(`${this.API}/productos/${idProducto}`);
   }
 

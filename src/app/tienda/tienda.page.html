@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="dark">
     <ion-title>
-      
-      <ion-searchbar animated placeholder="Buscar" (ionChange)="buscarProducto($event)"></ion-searchbar>
+      Productos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-searchbar animated placeholder="Buscar" (ionChange)="buscarProducto($event)"></ion-searchbar>
   <ion-grid>
     <ion-row>
       <ion-col izeMd="4" offsetMd="4">

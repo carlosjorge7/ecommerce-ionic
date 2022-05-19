@@ -11,12 +11,19 @@ export class CarritoPage implements OnInit {
 
   productos: Producto[];
 
+  total = 0;
+
   constructor(private carritoSerice: CarritoService) {}
 
   ngOnInit(): void {
-    this.productos = this.carritoSerice.estadoDelCarrito();
-    console.log(this.productos)
+    this.productos = this.carritoSerice.getCarrito();
   }
+
+  // public removeCarrito(): void {
+  //   this.carritoSerice.borrarCarrito();
+  // }
+
+  
 
 
 

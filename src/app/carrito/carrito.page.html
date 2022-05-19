@@ -12,15 +12,16 @@
       <ion-col izeMd="4" offsetMd="4">
         <ion-list *ngFor="let producto of productos">
             <ion-item >
-              <img [src]="'http://localhost:7777/' + producto.imagen" width="100px" height="100px" style="margin-bottom: 10px;">
-              <ion-label style="margin-left: 10px;">
-                <h2 class="title"><strong>{{producto.nombre}}</strong></h2>
-                <h1 class="subtext">{{ producto.precio }} € </h1>
+              <img [src]="'http://localhost:7777/' + producto.imagen" width="40px%" height="40px">
+                <p class="title">{{producto.nombre}}</p>
+                <p class="subtext">{{ producto.precio }} € </p>
                 <p class="subtext">{{ producto.descripcion }}</p>
-              </ion-label>
             </ion-item>
         </ion-list>
+        <ion-list><strong>Total {{ total }} </strong></ion-list>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <!-- Round -->
+  <ion-button (click)="removeCarrito()" shape="round">Borrar carrito</ion-button>
 </ion-content>

@@ -29,8 +29,10 @@ export class CarritoService {
     this.carrito = [];
   }
 
-  public estadoDelCarrito(): Producto[] {
+  public getCarrito(): Producto[] {
     return this.carrito;
   }
+
+  // IMPLEMENTAR CARRITO CON Rxjs
 
 }

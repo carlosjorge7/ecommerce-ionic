@@ -43,9 +43,8 @@ export class DetallePage implements OnInit {
     });
   }
 
-  public anadirProducto(producto: Producto) {
+  public anadirProducto(producto: Producto): void {
     this.carritoService.añadirProductoAlCarrito(producto);
-    console.log(this.carritoService.estadoDelCarrito());
   }
 
 }

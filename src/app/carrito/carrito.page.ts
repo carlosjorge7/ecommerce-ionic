@@ -10,12 +10,12 @@ import { CarritoService } from '../servicios/carrito.service';
 export class CarritoPage implements OnInit {
 
   productos: Producto[];
-  total: number = 0;
 
   constructor(private carritoSerice: CarritoService) {}
 
   ngOnInit(): void {
     this.productos = this.carritoSerice.getCarrito();
+ 
   }
 
   public removeProducto(producto: Producto) {
@@ -26,6 +26,15 @@ export class CarritoPage implements OnInit {
   public removeCarrito(): void {
     this.carritoSerice.borrarCarrito();
     this.productos = this.carritoSerice.getCarrito();
+  }
+
+  public calcularTotal(): number {
+    let total = 0;
+    let productos: Producto[] = this.carritoSerice.getCarrito();
+    for(let i = 0; i < productos.length; i++) {
+      total += productos[i].precio * productos[i].stock;
+    }
+    return total;
   }
 
   

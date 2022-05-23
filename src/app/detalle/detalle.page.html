@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="dark">
-    <ion-button slot="start">
-      <ion-back-button color="light" defaultHref="/tabs/tienda"></ion-back-button>
+    <ion-button color="light" slot="start" style="padding: 5px;">
+      <ion-back-button defaultHref="/tabs/tienda"></ion-back-button>
     </ion-button>
     Detalle del producto
   </ion-toolbar>
@@ -15,7 +15,7 @@
          <ion-card>
            <ion-card-content>
             <ion-title>{{producto.nombre}}</ion-title>
-             <img [src]="'http://localhost:7777/' + producto.imagen" alt="">
+             <img [src]="'http://localhost:7777/' + producto.imagen" [width]="300" [height]="300">
              <ion-card-title class="ion-text-center">
                Características
              </ion-card-title>
@@ -30,5 +30,21 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-button (click)="anadirProducto(producto)" style="margin-right: 20px; margin-left: 20px;" type="submit"  expand="block" color="warning" class="ion-margin-top">Añadir al carrito</ion-button>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-icon (click)="restItem()" name="remove-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <p>{{cantidad}}</p>
+      </ion-col>
+      <ion-col>
+        <ion-icon (click)="addItem()" name="add-circle-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-text>Total {{ total }}</ion-text>
+  </ion-grid>
+
+  <ion-button color="light" (click)="addCart(producto.idProducto, cantidad)" style="margin-right: 20px; margin-left: 20px;" type="submit" class="ion-margin-top">Añadir al carrito</ion-button>
 </ion-content>

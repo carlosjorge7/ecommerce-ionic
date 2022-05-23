@@ -11,7 +11,7 @@ export class CarritoService {
   constructor() { 
   }
 
-  public añadirProductoAlCarrito(producto: Producto): void {
+  public añadirProductoAlCarrito(producto: any): void {
     this.carrito.push(producto);
   }
 

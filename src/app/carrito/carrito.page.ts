@@ -19,9 +19,13 @@ export class CarritoPage implements OnInit {
     this.productos = this.carritoSerice.getCarrito();
   }
 
-  // public removeCarrito(): void {
-  //   this.carritoSerice.borrarCarrito();
-  // }
+  public removeProducto(producto: Producto) {
+    
+  }
+
+  public removeCarrito(): void {
+
+  }
 
   
 

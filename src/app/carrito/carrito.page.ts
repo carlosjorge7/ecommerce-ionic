@@ -10,8 +10,7 @@ import { CarritoService } from '../servicios/carrito.service';
 export class CarritoPage implements OnInit {
 
   productos: Producto[];
-
-  total = 0;
+  total: number = 0;
 
   constructor(private carritoSerice: CarritoService) {}
 
@@ -20,11 +19,13 @@ export class CarritoPage implements OnInit {
   }
 
   public removeProducto(producto: Producto) {
-    
+    this.carritoSerice.retirarProductoDelCarrito(producto);
+    this.productos = this.carritoSerice.getCarrito();
   }
 
   public removeCarrito(): void {
-
+    this.carritoSerice.borrarCarrito();
+    this.productos = this.carritoSerice.getCarrito();
   }
 
   

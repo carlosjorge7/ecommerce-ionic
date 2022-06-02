@@ -29,7 +29,7 @@ export class CarritoService {
     this.carrito = [];
   }
 
-  public getCarrito(): Producto[] {
+  public getCarrito(): any[] {
     return this.carrito;
   }
 

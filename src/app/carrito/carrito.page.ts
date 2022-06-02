@@ -9,7 +9,7 @@ import { CarritoService } from '../servicios/carrito.service';
 })
 export class CarritoPage implements OnInit {
 
-  productos: Producto[];
+  productos: any[];
 
   constructor(private carritoSerice: CarritoService) {}
 
@@ -30,9 +30,9 @@ export class CarritoPage implements OnInit {
 
   public calcularTotal(): number {
     let total = 0;
-    let productos: Producto[] = this.carritoSerice.getCarrito();
+    let productos: any[] = this.carritoSerice.getCarrito();
     for(let i = 0; i < productos.length; i++) {
-      total += productos[i].precio * productos[i].stock;
+      total += productos[i].precio * productos[i].cantidad;
     }
     return total;
   }

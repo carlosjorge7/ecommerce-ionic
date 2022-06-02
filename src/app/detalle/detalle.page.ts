@@ -74,7 +74,7 @@ export class DetallePage implements OnInit {
     }
   }
 
-  addCart(id, cantidad): void {
+  public addCart(id: number, cantidad: number): void {
     // this.carritoService.añadirProductoAlCarrito(producto);
     // this.router.navigate(['/tabs/tienda']);
     // this.presentToast('Producto añadido al carrito');

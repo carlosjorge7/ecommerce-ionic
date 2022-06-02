@@ -13,9 +13,8 @@
         <ion-list *ngFor="let producto of productos">
           <ion-item >
             <img [src]="'http://localhost:7777/' + producto.imagen" [width]="40" [height]="40">
-              <p class="title">{{producto.nombre}}</p>
-              <p class="subtext">{{ producto.precio }}€ </p>
-              <p class="subtext">{{ producto.descripcion }}</p>
+              {{producto.cantidad}} x {{producto.nombre}} - {{producto.precio}}
+              <span slot="end">{{producto.cantidad * producto.precio}} </span>
               <ion-icon slot="end" name="close" color="danger" (click)="removeProducto(producto)"></ion-icon>
           </ion-item>
         </ion-list>

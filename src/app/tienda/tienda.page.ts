@@ -37,9 +37,9 @@ export class TiendaPage implements OnInit {
   }
 
   public anadirProducto(producto: Producto): void {
-    this.carritoService.añadirProductoAlCarrito(producto);
-    this.router.navigate(['/tabs/tienda']);
-    this.presentToast('Producto añadido al carrito');
+    // this.carritoService.añadirProductoAlCarrito(producto);
+    // this.router.navigate(['/tabs/tienda']);
+    // this.presentToast('Producto añadido al carrito');
   }
 
   async presentToast(res: string) {
